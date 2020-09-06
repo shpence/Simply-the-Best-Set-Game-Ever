@@ -2,14 +2,12 @@ import os
 import sys
 
 class Deck:
-
     cards = {}
 
-    # The deck is created by filling the dictionary with each of the 81 cards to complete
-    # the deck via a comprehension that assigns the key of each card to be a unique four 
-    # digit code and the value is the card object itself.
+    # The deck is created by filling the dictionary with each of the 81 cards needed to
+    # complete the deck via a sequence of nested for loops that assigns the key of each   
+    # card to be a unique four-digit code and the value to be the card object itself.
     def __init__(self):
-        
         for n in range(1,4):
             for s in range(1,4):
                 for f in range(1,4):
@@ -18,9 +16,6 @@ class Deck:
                             Card(n,s,f,c, str(n) + str(s) + str(f) + str(c))
 
 class Card:
-
-
-
     def __init__(self, num, shape, fill, color, image):
         shapes = {1 : "Diamond", 2 : "Oval", 3 : "Squiggle"}
         fills = {1 : "Empty", 2 : "Full", 3 : "Striped"}
@@ -32,9 +27,25 @@ class Card:
         self.color = colors[color]
         self.image = images[image]
 
+# Gathering the images associated with the cards from the DeckoCards directory
 images = {}
 for image in os.listdir("DeckoCards"):
     images[image.replace('.png','')] = open(os.path.join("DeckoCards", image))
 
+#TESTING PURPOSES - REMOVE FROM FINAL PRODUCT
 deck = Deck()
 print(deck.cards['1111'].shape)
+
+# Close all the image files -- responsible clean up! :)
+for n in range(1,4):
+    for s in range(1,4):
+        for f in range(1,4):
+            for c in range(1,4):
+                images[str(n) + str(s) + str(f) + str(c)].close
+
+for n in range(1,4):
+    for s in range(1,4):
+        for f in range(1,4):
+            for c in range(1,4):
+                images[str(n) + str(s) + str(f) + str(c)].close
+                deck.cards[str(n) + str(s) + str(f) + str(c)].image.close
