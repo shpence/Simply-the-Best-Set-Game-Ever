@@ -14,7 +14,8 @@ class Deck:
             for s in range(1,4):
                 for f in range(1,4):
                     for c in range(1,4):
-                        self.cards[str(n) + str(s) + str(f) + str(c)] = Card(n,s,f,c, str(n) + str(s) + str(f) + str(c))
+                        self.cards[str(n) + str(s) + str(f) + str(c)] = \
+                            Card(n,s,f,c, str(n) + str(s) + str(f) + str(c))
 
 class Card:
 
@@ -32,8 +33,8 @@ class Card:
         self.image = images[image]
 
 images = {}
-for image in pathlib.Path("DeckoCards").iterDir():
-    images[image.replace('.png','')]
+for image in os.listdir("DeckoCards"):
+    images[image.replace('.png','')] = open(os.path.join("DeckoCards", image))
 
 deck = Deck()
 print(deck.cards['1111'].shape)
