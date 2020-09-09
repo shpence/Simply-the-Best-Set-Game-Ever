@@ -1,1 +1,8 @@
-ReadME
+Welcome to the game Set! Thank you for playing our game!
+
+This game requires a little setting up before you can actually play it, so please follow the instructions listed below:
+1. Firstly, make sure you have the latest version of Python (3.8.5 or newer) installed on your computer from https://www.python.org/downloads/.
+2. Install Visual Studio Code (https://code.visualstudio.com/Download) or PyCharm (https://www.jetbrains.com/pycharm/download/)
+    and follow the instructions for the IDE you have selected. You can pick whichever, neither is objectively harder than the other to use.
+Visual Studio Code:
+    3. Upon opening Visual Studio Code, 

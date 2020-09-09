@@ -40,6 +40,7 @@ class Puzzle:
 # Game window setup
 game = Tk()
 game.geometry("588x175+675+300")
+game.title("The Game Set")
 welcome = Label(text="Welcome to the Game Set!")
 
 puzzleMode = False
@@ -56,7 +57,7 @@ deck = Deck()
 
 # List of all the puzzles for Puzzle Mode
 p1 = Puzzle(['1121', '2233', '3321', '3222', '1113', '1223', '1332', '3213', '2131', '2221', '3111', '2313'], \
-    [['1121', '2131', '3111'], ['1223', '2233', '3321'], ['1121', '2221', '3321'], ['1332', '2313', '3321'], ['1223', '2221', '3222'], ['1113', '2313', '3213']])
+    [['1121', '2131', '3111'], ['1223', '2233', '3213'], ['1121', '2221', '3321'], ['1332', '2313', '3321'], ['1223', '2221', '3222'], ['1113', '2313', '3213']])
 
 p2 = Puzzle(['2313', '2332', '3311', '1312', '3333', '3213', '1331', '2333', '2211', '2132', '2122', '2323'], \
     [['2313', '3311', '1312'], ['2333', '2211', '2122'], ['2313', '2333', '2323'], ['3213', '1331', '2122'], ['2211', '2132', '2323'], ['2332', '3333', '1331']])
@@ -169,7 +170,7 @@ def notASet():
     incorrectMessage.grid(row=1, column=2, columnspan=4)
     pusher = Label(notASet, text=' ', padx=10, pady=20)
     pusher.grid(row=1, column=1)
-    playsound("sounds/oh no.mp3", block=False)
+    playsound("sounds/ohno.mp3", block=False)
 
 def victoryScreen():
     victory = Tk()
@@ -360,7 +361,6 @@ def initialize():
     fill10.grid(row=4,column=2)
     fill11.grid(row=4,column=3)
     fill12.grid(row=4,column=4)
-    victoryScreen()
 
     game.mainloop()
 
