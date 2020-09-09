@@ -243,9 +243,9 @@ def rulesPressed():
     ruleBook.geometry("+450+50")
     ruleBook.title('Rule Book')
     rulesLabel9 = Label(ruleBook, text="RULES OF THE GAME SET:")
-    rulesLabel1 = Label(ruleBook, text="The rules of the game are simple and complex at the same time. To win you have to get through the entirety of the deck, much like solitaire.")
-    rulesLabel2 = Label(ruleBook, text="To get rid of cards you much match them into sets of three. Now here's the kicker, every card of your set must be exactly the same or exactly different.")
-    rulesLabel3 = Label(ruleBook, text="What that means is the Shape, color, and number of the 3 cards must be either the same on all 3 cards or different on all 3 cards.")
+    rulesLabel1 = Label(ruleBook, text="The rules of the game are simple and complex at the same time. To win, you have to find all 6 of the sets in a given puzzle.")
+    rulesLabel2 = Label(ruleBook, text="You must match cards into sets of three. Now here's the kicker, every card of your set must be exactly the same or exactly different from the others.")
+    rulesLabel3 = Label(ruleBook, text="What that means is the shape, color, fill, and number of the 3 cards must be either the same on all 3 cards or different on all 3 cards.")
     rulesLabel4 = Label(ruleBook, text="For example- two open red ovals, two dashed red ovals, and two filled red ovals is a set. One dashed green squiggle, two dashed purple ovals, and three dashed red diamonds is a set.")
     rulesLabel5 = Label(ruleBook, text="Another example would be one dashed purple oval, two filled green diamonds, three open red squiggles.")
     rulesLabel6 = Label(ruleBook, text="Now an example that wouldn't work is one open purple oval, two open red ovals, and three open green diamonds. This is because the third was diamonds rather than ovals.")
@@ -288,6 +288,8 @@ def puzzleStart():
 
     global setsFound
     setsFound = []
+
+    currentSet.clear()
 
     createTable()
 
